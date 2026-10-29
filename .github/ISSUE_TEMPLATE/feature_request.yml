@@ -1,0 +1,17 @@
+name: Feature request / 功能建议
+description: Suggest a focused improvement that fits a small native todo app.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / 使用场景
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior / 期望行为
+      description: Explain the simplest interaction and any size or memory impact you expect.
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+# Template only. Replace YOUR_LOCAL_TOKEN with your own local app token.
+# Do not commit the configured copy.
+[mcp_servers.glass_todo]
+url = "http://127.0.0.1:57841/mcp"
+http_headers = { Authorization = "Bearer YOUR_LOCAL_TOKEN" }

@@ -1,0 +1,23 @@
+1 24 "app.manifest"
+1 ICON "app.ico"
+
+1 VERSIONINFO
+FILEVERSION 0,1,12,0
+PRODUCTVERSION 0,1,12,0
+FILEOS 0x40004L
+FILETYPE 0x1L
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904b0"
+    BEGIN
+      VALUE "FileDescription", "GlassTodo - Native floating todo\0"
+      VALUE "ProductName", "GlassTodo\0"
+      VALUE "FileVersion", "0.1.12\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

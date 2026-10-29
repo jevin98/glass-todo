@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "glass_todo": {
+      "type": "http",
+      "url": "http://127.0.0.1:57841/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_LOCAL_TOKEN"
+      }
+    }
+  }
+}

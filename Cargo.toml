@@ -1,0 +1,42 @@
+[package]
+name = "glass-todo"
+version = "0.1.12"
+edition = "2024"
+rust-version = "1.89"
+description = "A small native Windows floating todo with a local MCP server"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/jevin98/glass-todo"
+homepage = "https://github.com/jevin98/glass-todo"
+
+[dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+getrandom = "0.3"
+rusqlite = { version = "0.41", features = ["bundled"], default-features = false }
+rmcp = { version = "3.7", default-features = false, features = ["server", "macros", "transport-streamable-http-server"] }
+schemars = "1"
+axum = { version = "0.8", default-features = false, features = ["http1", "tokio"] }
+tokio = { version = "1", features = ["rt", "net", "time", "sync"] }
+tokio-util = "0.7"
+
+[target.'cfg(windows)'.dependencies]
+windows-numerics = "0.3"
+windows = { version = "0.62.2", features = [
+  "Win32_Foundation", "Win32_Security", "Win32_System_LibraryLoader",
+  "Win32_System_Threading", "Win32_System_Registry", "Win32_System_Com",
+  "Win32_Graphics_Gdi", "Win32_Graphics_Dwm", "Win32_Graphics_Direct2D",
+  "Win32_Graphics_Direct2D_Common", "Win32_Graphics_DirectWrite",
+  "Win32_Graphics_Dxgi_Common", "Win32_UI_WindowsAndMessaging",
+  "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_Input_Ime",
+  "Win32_UI_Controls", "Win32_UI_Shell", "Win32_UI_HiDpi",
+  "Win32_UI_Controls_RichEdit",
+] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
